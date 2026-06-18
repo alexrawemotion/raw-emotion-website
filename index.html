@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Raw Emotion — Feel Seen. Feel Understood.</title>
+<meta name="description" content="Raw Emotion — expressive art for the unheard, the sensitive, and the real. Art and books by Alex about mental health, autism and feeling seen.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Rubik+Spray+Paint&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --black:#121212;
+    --charcoal:#1c1b1a;
+    --orange:#ff5c1f;
+    --pink:#ff2e88;
+    --blue:#2e6bff;
+    --cream:#f3ead8;
+    --cream-soft:#efe6d2;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:
+      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3CfeColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.05 0'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)'/%3E%3C/svg%3E"),
+      var(--black);
+    color:var(--cream);
+    font-family:'Space Mono', monospace;
+    font-size:17px;
+    line-height:1.6;
+  }
+  h1,h2,h3,.marker{font-family:'Rubik Spray Paint', cursive; font-weight:400; line-height:1.05;}
+  a{color:inherit;}
+  img{display:block;width:100%;height:100%;object-fit:cover;}
+
+  /* ---- texture edges ---- */
+  .splash-top{
+    height:26px;
+    background:
+      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='26' preserveAspectRatio='none'%3E%3Cpath d='M0 0 H200 V8 q-4 0 -5 7 t-3 -5 q-6 1 -7 9 t-4 -9 q-8 0 -9 5 t-5 -5 q-10 2 -12 11 t-6 -11 q-9 0 -10 6 t-6 -6 q-7 1 -8 12 t-5 -12 q-11 0 -12 5 t-7 -5 q-9 1 -10 8 t-6 -8 q-12 0 -14 10 t-8 -10 q-10 0 -11 6 t-7 -6 q-8 0 -9 4 t-6 -4 H0 Z' fill='%23121212'/%3E%3C/svg%3E") bottom/200px 26px repeat-x,
+      linear-gradient(90deg,var(--blue) 0 18%,var(--pink) 18% 42%,var(--orange) 42% 70%,var(--blue) 70% 100%);
+  }
+  .doodle{position:absolute;pointer-events:none;opacity:.9;}
+
+  /* ---- nav ---- */
+  nav{
+    display:flex;align-items:center;justify-content:space-between;
+    padding:18px 6vw;flex-wrap:wrap;gap:12px;
+    border-bottom:2px solid rgba(243,234,216,.15);
+  }
+  .logo{font-family:'Rubik Spray Paint',cursive;font-size:1.6rem;color:var(--cream);text-decoration:none;}
+  .logo span{color:var(--pink);}
+  nav ul{display:flex;list-style:none;gap:22px;flex-wrap:wrap;}
+  nav ul a{
+    text-decoration:none;font-size:.85rem;letter-spacing:.12em;text-transform:uppercase;
+    padding:10px 2px;border-bottom:3px solid transparent;
+  }
+  nav ul a:hover,nav ul a:focus{color:var(--orange);border-bottom-color:var(--orange);}
+
+  /* ---- hero ---- */
+  .hero{
+    padding:48px 6vw 64px;
+    display:grid;grid-template-columns:1fr;gap:40px;
+    position:relative;overflow:hidden;
+  }
+  .hero::before{
+    content:"";position:absolute;inset:0;pointer-events:none;
+    background:
+      radial-gradient(ellipse 420px 280px at 92% 8%, rgba(255,92,31,.30), transparent 55%),
+      radial-gradient(ellipse 380px 260px at 4% 92%, rgba(46,107,255,.24), transparent 55%),
+      radial-gradient(ellipse 300px 220px at 85% 85%, rgba(255,46,136,.22), transparent 55%),
+      radial-gradient(circle 3px at 12% 18%, rgba(255,92,31,.8), transparent 100%),
+      radial-gradient(circle 2px at 16% 24%, rgba(255,46,136,.8), transparent 100%),
+      radial-gradient(circle 2px at 9% 30%, rgba(243,234,216,.5), transparent 100%),
+      radial-gradient(circle 3px at 78% 60%, rgba(255,46,136,.7), transparent 100%),
+      radial-gradient(circle 2px at 84% 52%, rgba(255,92,31,.7), transparent 100%),
+      radial-gradient(circle 2px at 70% 14%, rgba(243,234,216,.5), transparent 100%);
+    filter:blur(.3px);
+  }
+  .hero-text{position:relative;z-index:1;}
+  .hero h1{font-size:clamp(2.6rem,9vw,5rem);}
+  .hero h1 .l1{color:var(--orange);display:block;}
+  .hero h1 .l2{color:var(--pink);display:block;}
+  .hero h1 .l3{color:var(--cream);display:block;text-decoration:underline;text-decoration-thickness:6px;text-underline-offset:10px;}
+  .hero p.sub{margin:28px 0 8px;max-width:34ch;}
+  .hero p.sub2{margin:0 0 32px;max-width:38ch;color:var(--cream-soft);opacity:.85;}
+  .btn{
+    display:inline-block;font-family:'Space Mono',monospace;font-weight:700;
+    letter-spacing:.14em;text-transform:uppercase;font-size:.9rem;
+    color:var(--pink);text-decoration:none;
+    border:3px solid var(--pink);padding:16px 26px;
+    transition:background .15s,color .15s;
+  }
+  .btn:hover,.btn:focus{background:var(--pink);color:var(--black);}
+  .btn.orange{color:var(--orange);border-color:var(--orange);}
+  .btn.orange:hover,.btn.orange:focus{background:var(--orange);color:var(--black);}
+
+  .hero-art{position:relative;z-index:1;}
+  .ph{
+    position:relative;overflow:hidden;
+    background:repeating-linear-gradient(45deg,#26221f 0 14px,#1c1b1a 14px 28px);
+    border:3px solid rgba(243,234,216,.2);
+  }
+  .ph::after{
+    content:attr(data-label);
+    position:absolute;inset:auto 0 0 0;
+    background:rgba(18,18,18,.75);color:var(--cream);
+    font-size:.75rem;letter-spacing:.08em;padding:8px 10px;text-align:center;
+  }
+  .hero-art .ph{aspect-ratio:4/5;max-width:520px;margin:0 auto;}
+  .hero-note{
+    font-family:'Rubik Spray Paint',cursive;font-size:1.15rem;color:var(--cream);
+    margin:18px auto 0;max-width:520px;text-align:right;
+  }
+  .tape{
+    display:inline-block;background:var(--cream);color:var(--black);
+    font-family:'Rubik Spray Paint',cursive;font-size:1.1rem;
+    padding:10px 16px;transform:rotate(-1.5deg);margin-top:14px;
+  }
+  .tape b{color:var(--pink);}
+
+  /* ---- about ---- */
+  .about-wrap{padding:32px 6vw 72px;background:
+    linear-gradient(180deg, var(--black) 0%, #15203a 140%);}
+  .about{
+    background:var(--cream);color:var(--black);
+    padding:36px 28px;max-width:1100px;margin:0 auto;
+    box-shadow:10px 10px 0 var(--pink), 20px 20px 0 rgba(46,107,255,.5);
+    transform:rotate(-.4deg);
+    clip-path:polygon(0% 2%, 3% 0%, 25% 1%, 50% 0%, 75% 1%, 97% 0%, 100% 3%, 99% 25%, 100% 50%, 99% 75%, 100% 97%, 97% 100%, 75% 99%, 50% 100%, 25% 99%, 3% 100%, 0% 97%, 1% 75%, 0% 50%, 1% 25%);
+  }
+  .about > *{transform:rotate(.4deg);}
+  .about h2{font-size:clamp(1.8rem,5vw,2.6rem);border-bottom:4px solid var(--black);display:inline-block;padding-bottom:6px;margin-bottom:22px;}
+  .about-grid{display:grid;grid-template-columns:1fr;gap:30px;margin-top:8px;}
+  .about p{margin-bottom:16px;}
+  .about .pink{color:var(--pink);font-weight:700;text-transform:uppercase;letter-spacing:.06em;}
+  .about .ph{aspect-ratio:3/4;max-width:340px;border-color:var(--black);}
+  .traits{list-style:none;display:grid;gap:18px;}
+  .traits h3{font-size:1.05rem;letter-spacing:.05em;}
+  .traits li{border-left:5px solid var(--orange);padding-left:14px;}
+  .traits li:nth-child(2){border-color:var(--blue);}
+  .traits li:nth-child(3){border-color:var(--pink);}
+  .traits li:nth-child(4){border-color:var(--orange);}
+  .traits p{margin:0;font-size:.95rem;}
+
+  /* ---- gallery ---- */
+  .gallery{padding:64px 6vw;}
+  .gallery h2{font-size:clamp(2rem,6vw,3rem);color:var(--cream);}
+  .gallery h2 em{font-style:normal;color:var(--orange);}
+  .underline{width:120px;height:8px;background:var(--pink);margin:14px 0 36px;transform:rotate(-1deg);}
+  .grid{display:grid;grid-template-columns:1fr;gap:26px;}
+  .card .ph{aspect-ratio:4/5;}
+  .card figcaption{margin-top:10px;font-size:.85rem;letter-spacing:.1em;text-transform:uppercase;}
+  .card figcaption span{color:var(--cream-soft);opacity:.7;display:block;font-size:.75rem;margin-top:2px;}
+
+  /* ---- books ---- */
+  .books{padding:64px 6vw;background:
+    linear-gradient(180deg,#1a1414 0%, var(--black) 100%);border-top:2px solid rgba(243,234,216,.12);}
+  .books h2{font-size:clamp(2rem,6vw,3rem);color:var(--pink);}
+  .books-grid{display:grid;grid-template-columns:1fr;gap:36px;margin-top:36px;}
+  .book{display:grid;gap:18px;align-content:start;}
+  .book .ph{aspect-ratio:2/3;max-width:300px;}
+  .book h3{font-size:1.4rem;color:var(--cream);}
+  .book p{font-size:.95rem;color:var(--cream-soft);}
+
+  /* ---- contact ---- */
+  .contact{padding:64px 6vw 72px;text-align:center;}
+  .contact h2{font-size:clamp(2rem,6vw,3rem);color:var(--orange);}
+  .contact p{max-width:46ch;margin:14px auto 28px;color:var(--cream-soft);}
+
+  /* ---- footer ---- */
+  .join{background:var(--pink);color:var(--black);padding:56px 6vw;}
+  .join h2{font-size:clamp(1.9rem,6vw,2.8rem);}
+  .join p{max-width:48ch;margin:14px 0 26px;font-weight:700;}
+  .join .promise{font-family:'Rubik Spray Paint',cursive;font-size:1.3rem;}
+  footer{padding:26px 6vw;text-align:center;font-size:.8rem;letter-spacing:.1em;color:var(--cream-soft);opacity:.8;}
+
+  /* ---- desktop ---- */
+  @media(min-width:820px){
+    .hero{grid-template-columns:1.1fr 1fr;align-items:center;}
+    .about-grid{grid-template-columns:1.2fr .9fr 1fr;align-items:start;}
+    .grid{grid-template-columns:repeat(2,1fr);}
+    .books-grid{grid-template-columns:1fr 1fr;}
+  }
+  @media(min-width:1100px){
+    .grid{grid-template-columns:repeat(3,1fr);}
+  }
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto;}
+  }
+  :focus-visible{outline:3px dashed var(--orange);outline-offset:3px;}
+</style>
+</head>
+<body>
+
+<div class="splash-top" aria-hidden="true"></div>
+
+<nav aria-label="Main">
+  <a class="logo" href="#top">SEEN<span>.</span></a>
+  <ul>
+    <li><a href="#about">About</a></li>
+    <li><a href="#artwork">Artwork</a></li>
+    <li><a href="#books">Books</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<header class="hero" id="top">
+  <svg class="doodle" style="top:20px;right:6vw;width:64px;height:48px;" viewBox="0 0 64 48" aria-hidden="true">
+    <path d="M6 38 L10 14 L22 28 L32 8 L42 28 L54 14 L58 38 Z" fill="none" stroke="#f3ead8" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+  </svg>
+  <svg class="doodle" style="bottom:30px;left:4vw;width:54px;height:50px;" viewBox="0 0 54 50" aria-hidden="true">
+    <path d="M27 44 C8 30 2 16 12 9 C19 4 26 9 27 15 C28 9 35 4 42 9 C52 16 46 30 27 44 Z" fill="none" stroke="#ff2e88" stroke-width="3" stroke-linecap="round"/>
+  </svg>
+  <svg class="doodle" style="top:46%;left:46%;width:40px;height:40px;" viewBox="0 0 40 40" aria-hidden="true">
+    <path d="M20 4 L23 16 L36 17 L25 24 L29 36 L20 28 L11 36 L15 24 L4 17 L17 16 Z" fill="none" stroke="#ff5c1f" stroke-width="2.5" stroke-linejoin="round"/>
+  </svg>
+  <div class="hero-text">
+    <h1>
+      <span class="l1">Raw Emotion.</span>
+      <span class="l2">Real Human.</span>
+      <span class="l3">Seen.</span>
+    </h1>
+    <p class="sub">For minds that see the world differently.</p>
+    <p class="sub2">A place for people who feel deeply and sometimes feel alone.</p>
+    <a class="btn" href="#artwork">Explore the art &nbsp;&rarr;</a>
+  </div>
+  <div class="hero-art">
+    <div class="ph" data-label="images/hero-artwork.webp">
+      <img src="images/hero-artwork.webp" alt="Bright spray paint portrait of a face with blue eyes, neon pink and orange skin and a yellow crown" onerror="this.style.display='none'">
+    </div>
+    <p class="hero-note">I feel too much — but that&rsquo;s okay.</p>
+    <span class="tape">Art that speaks <b>what words can&rsquo;t.</b></span>
+  </div>
+</header>
+
+<section class="about-wrap" id="about">
+  <div class="about">
+    <h2>Hi, I&rsquo;m Alex.</h2>
+    <div class="about-grid">
+      <div>
+        <p>I&rsquo;m a student, artist, author and mental health advocate. I create emotional, expressive paintings about mental health, healing, identity, and everything we don&rsquo;t always say out loud.</p>
+        <p>My journey into art began during one of the hardest periods of my life. Creativity became more than an escape — it became a way to heal, express emotions, and connect with others who felt misunderstood or alone.</p>
+        <p>My work is raw, honest, and full of feeling.</p>
+        <p class="pink">I want people to look at my work and feel seen.</p>
+      </div>
+      <div class="ph" data-label="images/portrait.webp">
+        <img src="images/portrait.webp" alt="Black and white portrait photograph of Alex looking calmly at the camera" onerror="this.style.display='none'">
+      </div>
+      <ul class="traits">
+        <li><h3>Emotional</h3><p>Art from the heart.</p></li>
+        <li><h3>Expressive</h3><p>Loud colours. Real feelings.</p></li>
+        <li><h3>Honest</h3><p>No filters. No pretending.</p></li>
+        <li><h3>Hopeful</h3><p>Even in the chaos, there is hope.</p></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="gallery" id="artwork">
+  <h2>Explore <em>the art</em></h2>
+  <div class="underline" aria-hidden="true"></div>
+  <div class="grid">
+    <figure class="card">
+      <div class="ph" data-label="images/artwork-1.webp">
+        <img src="images/artwork-1.webp" alt="Spray paint portrait of a face wearing a grey hat, with red and black lines and blue tears" onerror="this.style.display='none'">
+      </div>
+      <figcaption>The Cowboy <span>Spray paint on canvas</span></figcaption>
+    </figure>
+    <figure class="card">
+      <div class="ph" data-label="images/artwork-2.webp">
+        <img src="images/artwork-2.webp" alt="Painted face with green and yellow maze-like lines and black scribbled hair, signed A Raw" onerror="this.style.display='none'">
+      </div>
+      <figcaption>Hm. <span>Acrylic on canvas</span></figcaption>
+    </figure>
+    <figure class="card">
+      <div class="ph" data-label="images/artwork-3.webp">
+        <img src="images/artwork-3.webp" alt="Four worried faces looking in different directions on a bright blue background" onerror="this.style.display='none'">
+      </div>
+      <figcaption>Faces in the Blue <span>Acrylic on canvas</span></figcaption>
+    </figure>
+    <figure class="card">
+      <div class="ph" data-label="images/artwork-4.webp">
+        <img src="images/artwork-4.webp" alt="Neon spray paint face with blue eyes, pink and orange glow and a yellow crown" onerror="this.style.display='none'">
+      </div>
+      <figcaption>Neon King <span>Spray paint on canvas</span></figcaption>
+    </figure>
+    <figure class="card">
+      <div class="ph" data-label="images/artwork-5.webp">
+        <img src="images/artwork-5.webp" alt="Purple flower growing tall in a pot, surrounded by grey floating faces on a blue background" onerror="this.style.display='none'">
+      </div>
+      <figcaption>Still Growing <span>Acrylic on canvas</span></figcaption>
+    </figure>
+  </div>
+</section>
+
+<section class="books" id="books">
+  <h2>The Books</h2>
+  <div class="books-grid">
+    <div class="book">
+      <div class="ph" data-label="images/book-1-boy-inside-my-head.webp">
+        <img src="images/book-1-boy-inside-my-head.webp" alt="Book cover of Raw Emotion by A. Raw, showing an expressive painted face with an open mouth" onerror="this.style.display='none'">
+      </div>
+      <h3>Raw Emotion: Boy Inside My Head</h3>
+      <p>My first book — the emotions, struggles and experiences that shaped my life, told through raw artwork, photography and honest reflection.</p>
+      <a class="btn" href="https://www.amazon.co.uk/dp/B0DCSKR4Q2" target="_blank" rel="noopener">Buy on Amazon &nbsp;&rarr;</a>
+    </div>
+    <div class="book">
+      <div class="ph" data-label="images/book-2-roller-coaster.webp">
+        <img src="images/book-2-roller-coaster.webp" alt="Book cover of Roller Coaster by Alex Raw, showing a painted face with large colourful eyes" onerror="this.style.display='none'">
+      </div>
+      <h3>Roller Coaster</h3>
+      <p>The journey continues — resilience, emotion, and the realities of living in a world where many struggles remain unseen.</p>
+      <a class="btn" href="https://www.amazon.co.uk/dp/B0GJSP4RWT" target="_blank" rel="noopener">Buy on Amazon &nbsp;&rarr;</a>
+    </div>
+  </div>
+</section>
+
+<section class="join">
+  <h2>Join the journey.</h2>
+  <p>New art, new words, new ways to feel less alone — this is just the beginning.</p>
+  <p class="promise">Feel Seen. Feel Understood.</p>
+</section>
+
+<section class="contact" id="contact">
+  <h2>Let&rsquo;s connect</h2>
+  <p>Want to talk, ask about the art, or just say hello? Get in touch — every message matters.</p>
+  <a class="btn orange" href="mailto:Beseen@mail.com">Beseen@mail.com</a>
+</section>
+
+<footer>RAW EMOTION &mdash; SEEN. &copy; 2026</footer>
+
+</body>
+</html>
