@@ -163,6 +163,23 @@
   .book h3{font-size:1.4rem;color:var(--cream);}
   .book p{font-size:.95rem;color:var(--cream-soft);}
 
+  /* ---- support ---- */
+  .support{padding:64px 6vw;background:linear-gradient(180deg,#101a30 0%, var(--black) 100%);border-top:2px solid rgba(243,234,216,.12);}
+  .support h2{font-size:clamp(2rem,6vw,3rem);color:var(--blue);}
+  .support > p{max-width:52ch;margin:14px 0 32px;color:var(--cream-soft);}
+  .support-grid{display:grid;grid-template-columns:1fr;gap:18px;}
+  .help-card{
+    display:block;text-decoration:none;
+    background:var(--charcoal);border:2px solid rgba(243,234,216,.18);
+    padding:22px 20px;
+    transition:border-color .15s,transform .15s;
+  }
+  .help-card:hover,.help-card:focus{border-color:var(--blue);transform:translateY(-3px);}
+  .help-card h3{font-size:1.3rem;color:var(--cream);margin-bottom:8px;}
+  .help-card .num{color:var(--orange);font-weight:700;margin-bottom:6px;font-size:1rem;}
+  .help-card p{font-size:.9rem;color:var(--cream-soft);margin:0;}
+  .emergency{margin-top:28px;padding:18px 20px;border-left:5px solid var(--pink);background:rgba(255,46,136,.08);font-size:.95rem;max-width:60ch;}
+
   /* ---- contact ---- */
   .contact{padding:64px 6vw 72px;text-align:center;}
   .contact h2{font-size:clamp(2rem,6vw,3rem);color:var(--orange);}
@@ -181,6 +198,7 @@
     .about-grid{grid-template-columns:1.2fr .9fr 1fr;align-items:start;}
     .grid{grid-template-columns:repeat(2,1fr);}
     .books-grid{grid-template-columns:1fr 1fr;}
+    .support-grid{grid-template-columns:repeat(3,1fr);}
   }
   @media(min-width:1100px){
     .grid{grid-template-columns:repeat(3,1fr);}
@@ -202,6 +220,7 @@
     <li><a href="#artwork">Artwork</a></li>
     <li><a href="#books">Books</a></li>
     <li><a href="#contact">Contact</a></li>
+    <li><a href="#support">Get help</a></li>
   </ul>
 </nav>
 
@@ -326,6 +345,39 @@
   <h2>Let&rsquo;s connect</h2>
   <p>Want to talk, ask about the art, or just say hello? Get in touch — every message matters.</p>
   <a class="btn orange" href="mailto:Beseen@mail.com">Beseen@mail.com</a>
+</section>
+
+<section class="support" id="support">
+  <h2>You&rsquo;re not alone</h2>
+  <p>If things feel too heavy, please reach out. These services are free, confidential, and there to listen — any time, no judgement.</p>
+  <div class="support-grid">
+    <a class="help-card" href="https://www.samaritans.org" target="_blank" rel="noopener">
+      <h3>Samaritans</h3>
+      <p class="num">Call 116 123</p>
+      <p>Someone to talk to, 24 hours a day.</p>
+    </a>
+    <a class="help-card" href="https://giveusashout.org" target="_blank" rel="noopener">
+      <h3>Shout</h3>
+      <p class="num">Text SHOUT to 85258</p>
+      <p>Free, confidential text support, 24/7.</p>
+    </a>
+    <a class="help-card" href="https://www.papyrus-uk.org" target="_blank" rel="noopener">
+      <h3>Papyrus HOPELINE</h3>
+      <p class="num">Call 0800 068 41 41</p>
+      <p>For anyone under 35 struggling with difficult thoughts.</p>
+    </a>
+    <a class="help-card" href="https://www.thecalmzone.net" target="_blank" rel="noopener">
+      <h3>CALM</h3>
+      <p class="num">Call 0800 58 58 58</p>
+      <p>Support and a listening ear, every day 5pm&ndash;midnight.</p>
+    </a>
+    <a class="help-card" href="https://www.mind.org.uk" target="_blank" rel="noopener">
+      <h3>Mind</h3>
+      <p class="num">mind.org.uk</p>
+      <p>Advice and information on mental health.</p>
+    </a>
+  </div>
+  <p class="emergency">In an emergency, or if someone&rsquo;s life is at risk, call <strong>999</strong>. For urgent mental health help, call <strong>NHS 111</strong> and choose the mental health option.</p>
 </section>
 
 <footer>RAW EMOTION &mdash; SEEN. &copy; 2026</footer>
