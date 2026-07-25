@@ -134,6 +134,13 @@
   .traits li:nth-child(3){border-color:var(--pink);}
   .traits li:nth-child(4){border-color:var(--orange);}
   .traits p{margin:0;font-size:.95rem;}
+  .about-values{display:grid;gap:28px;align-content:start;}
+  .about-story{
+    margin:0;padding:18px 0 0 18px;
+    border-left:5px solid var(--pink);
+    border-top:2px solid rgba(18,18,18,.18);
+    font-size:.92rem;line-height:1.65;
+  }
 
   /* ---- gallery ---- */
   .gallery{padding:64px 6vw;}
@@ -266,12 +273,15 @@
       <div class="ph">
         <img src="images/portrait.webp" alt="Black and white portrait photograph of Alex looking calmly at the camera" onerror="this.style.display='none'">
       </div>
-      <ul class="traits">
-        <li><h3>Emotional</h3><p>Art from the heart.</p></li>
-        <li><h3>Expressive</h3><p>Loud colours. Real feelings.</p></li>
-        <li><h3>Honest</h3><p>No filters. No pretending.</p></li>
-        <li><h3>Hopeful</h3><p>Even in the chaos, there is hope.</p></li>
-      </ul>
+      <div class="about-values">
+        <ul class="traits">
+          <li><h3>Emotional</h3><p>Art from the heart.</p></li>
+          <li><h3>Expressive</h3><p>Loud colours. Real feelings.</p></li>
+          <li><h3>Honest</h3><p>No filters. No pretending.</p></li>
+          <li><h3>Hopeful</h3><p>Even in the chaos, there is hope.</p></li>
+        </ul>
+        <p class="about-story">The reason art saved my life is because it was always there for me. It understood me in a way no other person ever could. That&rsquo;s why I created Raw Emotion&mdash;a place built around art, books, and honest stories. My hope is that what saved me might help someone else feel seen, understood, and a little less alone.</p>
+      </div>
     </div>
   </div>
 </section>
