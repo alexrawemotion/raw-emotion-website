@@ -142,6 +142,20 @@
     font-size:.92rem;line-height:1.65;
   }
 
+  /* ---- news ---- */
+  .news{padding:64px 6vw;background:linear-gradient(180deg,#151515 0%,#1a1414 100%);}
+  .news-card{
+    max-width:900px;margin:0 auto;padding:30px;
+    border:3px solid var(--orange);background:var(--charcoal);
+    box-shadow:10px 10px 0 var(--pink);
+  }
+  .news-kicker{
+    margin:0 0 12px;color:var(--orange);font-weight:700;
+    letter-spacing:.14em;text-transform:uppercase;font-size:.85rem;
+  }
+  .news h2{font-size:clamp(1.8rem,5vw,2.8rem);color:var(--cream);max-width:20ch;}
+  .news-summary{max-width:58ch;margin:18px 0 26px;color:var(--cream-soft);}
+
   /* ---- gallery ---- */
   .gallery{padding:64px 6vw;}
   .gallery h2{font-size:clamp(2rem,6vw,3rem);color:var(--cream);}
@@ -226,6 +240,7 @@
   <a class="logo" href="#top">SEEN<span>.</span></a>
   <ul>
     <li><a href="#about">About</a></li>
+    <li><a href="#news">BBC News</a></li>
     <li><a href="#artwork">Artwork</a></li>
     <li><a href="#books">Books</a></li>
     <li><a href="#contact">Contact</a></li>
@@ -293,6 +308,15 @@
       </div>
     </div>
   </div>
+</section>
+
+<section class="news" id="news">
+  <article class="news-card">
+    <p class="news-kicker">Featured on BBC News</p>
+    <h2>&lsquo;Art saved my life&rsquo; &mdash; teen&rsquo;s joy at book of paintings</h2>
+    <p class="news-summary">A student born with foetal alcohol spectrum disorder is hoping to inspire others with his artwork.</p>
+    <a class="btn orange" href="https://www.bbc.co.uk/news/articles/c8xepk1e408o" target="_blank" rel="noopener">Read the BBC News article &nbsp;&rarr;</a>
+  </article>
 </section>
 
 <section class="gallery" id="artwork">
