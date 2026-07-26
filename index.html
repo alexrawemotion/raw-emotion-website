@@ -111,6 +111,30 @@
   }
   .tape b{color:var(--pink);}
 
+  /* ---- welcome video ---- */
+  .welcome-video{
+    padding:56px 6vw 72px;
+    background:linear-gradient(180deg,var(--black) 0%,#171218 100%);
+    border-top:2px solid rgba(243,234,216,.12);
+  }
+  .welcome-video-inner{max-width:1100px;margin:0 auto;}
+  .welcome-video h2{
+    font-size:clamp(2rem,6vw,3rem);color:var(--pink);
+    margin-bottom:22px;
+  }
+  .welcome-video-frame{
+    padding:8px;background:var(--charcoal);
+    border:3px solid var(--pink);
+    box-shadow:10px 10px 0 var(--blue);
+  }
+  .welcome-video video{
+    display:block;width:100%;height:auto;
+    aspect-ratio:16/9;background:#000;
+  }
+  .welcome-video p{
+    max-width:58ch;margin:22px 0 0;color:var(--cream-soft);
+  }
+
   /* ---- about ---- */
   .about-wrap{padding:32px 6vw 72px;background:
     linear-gradient(180deg, var(--black) 0%, #15203a 140%);}
@@ -300,6 +324,19 @@
     <span class="tape">Art that speaks <b>what words can&rsquo;t.</b></span>
   </div>
 </header>
+
+<section class="welcome-video" aria-labelledby="welcome-video-title">
+  <div class="welcome-video-inner">
+    <h2 id="welcome-video-title">This is Raw Emotion.</h2>
+    <div class="welcome-video-frame">
+      <video autoplay muted playsinline controls preload="metadata" poster="media/raw-emotion-intro-poster.jpg" aria-label="This is Raw Emotion introduction video">
+        <source src="media/raw-emotion-intro.mp4" type="video/mp4">
+        Your browser does not support embedded video.
+      </video>
+    </div>
+    <p>The story behind the art, the emotion, and the reason this space exists. Turn the sound on to listen.</p>
+  </div>
+</section>
 
 <section class="about-wrap" id="about">
   <div class="about">
